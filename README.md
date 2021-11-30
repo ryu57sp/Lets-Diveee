@@ -24,12 +24,15 @@
 ダイバー・ダイビングに興味がある人・海が好きな人
 
 ### 主な利用シーン
-##### ダイバー🤿
+#### ダイバー🤿
 ダイバー同士での情報共有・ログとしての思い出作り・多くの人に海の魅力を発信
-##### ダイビングに興味がある人・海が好きな人🏝
+#### ダイビングに興味がある人・海が好きな人🏝
 ダイビングを始めるきっかけ作り・たくさんのダイバーさんが潜った数多くの水中世界を閲覧
 
 ## 設計書
+- ER図
+
+<img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/diagram.jpg" width="100%">
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1CEjA5hcCGKUEyK23-82nkXig9PwOZk9aFIFRN7ttZ-Y/edit?usp=sharing
