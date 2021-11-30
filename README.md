@@ -34,6 +34,9 @@
 
 <img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/diagram.jpg" width="100%">
 
+- テーブル定義書（制作中）
+- アプリケーション詳細設定（制作中）
+
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1CEjA5hcCGKUEyK23-82nkXig9PwOZk9aFIFRN7ttZ-Y/edit?usp=sharing
 
