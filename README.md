@@ -46,6 +46,10 @@
 - 綺麗な海の写真を見て癒やされたい時
 
 ## 設計書
+- 画面遷移図
+
+<img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/flow.jpg" width="100%">
+
 - ER図
 
 <img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/diagram.jpg" width="100%">
