@@ -1,5 +1,5 @@
 # Let's Diveee!!!
-<img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/honu.jpg" width="50%">
+<img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/honu.jpg" width="55%">
 
 ## サイト概要
 このサイトは海が好きな人が集まるダイビングに特化したサイトです。
@@ -24,9 +24,9 @@
 ダイバー・ダイビングに興味がある人・海が好きな人
 
 ### 主な利用シーン
-#### ダイバー🤿
+#### 🤿 ダイバー
 ダイバー同士での情報共有・ログとしての思い出作り・多くの人に海の魅力を発信
-#### ダイビングに興味がある人・海が好きな人🏝
+#### 🏝 ダイビングに興味がある人・海が好きな人
 ダイビングを始めるきっかけ作り・たくさんのダイバーさんが潜った数多くの水中世界を閲覧
 
 ## 設計書
@@ -34,12 +34,11 @@
 
 <img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/diagram.jpg" width="100%">
 
-- テーブル定義書
-https://docs.google.com/spreadsheets/d/1xHTYDUPSMpJMChXwU71X_EE_5ta44sGUvvARx6UIqtw/edit?usp=sharing
-- アプリケーション詳細設定（制作中）
+- [テーブル定義書](https://docs.google.com/spreadsheets/d/1xHTYDUPSMpJMChXwU71X_EE_5ta44sGUvvARx6UIqtw/edit?usp=sharing)
+- [アプリケーション詳細設定](https://docs.google.com/spreadsheets/d/1PHe_GkD213or_vAOnAvsLU6suv9KyZaKprmMT0TQjdQ/edit?usp=sharing)
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1CEjA5hcCGKUEyK23-82nkXig9PwOZk9aFIFRN7ttZ-Y/edit?usp=sharing
+[チャレンジ要素一覧シート](https://docs.google.com/spreadsheets/d/1CEjA5hcCGKUEyK23-82nkXig9PwOZk9aFIFRN7ttZ-Y/edit?usp=sharing)
 
 ## 開発環境
 - OS：Linux(CentOS)
