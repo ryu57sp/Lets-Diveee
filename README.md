@@ -1,5 +1,5 @@
 # Let's Diveee!!!
-<img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/honu.jpg" width="55%">
+<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/honu.jpg" width="70%">
 
 ## サイト概要
 このサイトは海が好きな人が集まるダイビングに特化したサイトです。
@@ -48,11 +48,11 @@
 ## 設計書
 - 画面遷移図
 
-<img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/flow.jpg" width="100%">
+<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/flow.jpg" width="100%">
 
 - ER図
 
-<img src="https://github.com/ryu57sp/Portfolio/blob/main/app/assets/images/diagram.jpg" width="100%">
+<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/diagram.jpg" width="100%">
 
 - [テーブル定義書](https://docs.google.com/spreadsheets/d/1xHTYDUPSMpJMChXwU71X_EE_5ta44sGUvvARx6UIqtw/edit?usp=sharing)
 - [アプリケーション詳細設定](https://docs.google.com/spreadsheets/d/1PHe_GkD213or_vAOnAvsLU6suv9KyZaKprmMT0TQjdQ/edit?usp=sharing)
