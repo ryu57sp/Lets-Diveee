@@ -1,0 +1,52 @@
+<h1 class="text-center mt-5">Edit Adventure🤿</h1>
+
+<div class="col-8 offset-2 mt-5">
+  <%= form_with model: @dive, local: true do |f| %>
+
+    <div class="form-group row">
+      <div class="col-4"><%= f.label :画像 %></div>
+      <div class="col-8"><%= f.attachment_field :image %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :ポイント名 %></div>
+      <div class="col-8"><%= f.text_field :dive_point, placeholder: "潜ったダイビングポイント", class: "form-control" %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :タイトル %></div>
+      <div class="col-8"><%= f.text_field :title, placeholder: "１８文字以内", class: "form-control" %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :内容 %></div>
+      <div class="col-8"><%= f.text_area :body, placeholder: "ここに内容を記述します", class: "form-control", rows: "5" %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :水温 %></div>
+      <div class="col-8 d-flex flex-row"><%= f.select :water_temperature,[['１０℃以下' ], ['１０〜１３℃'],['１３〜１５℃'],['１５〜１８℃'],['１８〜２０℃'],['２０〜２３℃'],['２３〜２５℃'],['２５〜２８℃'],['２８〜３０℃'],['３０℃以上']], {prompt:'選択'}, class: "form-control" %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :潜水深度 %></div>
+      <div class="col-8 d-flex flex-row"><%= f.select :maximum_depth, [['５〜７m' ], ['７〜１０m'],['１０〜１５m'],['１５〜２０m'],['２０〜２５m'],['２５〜３０m'],['３０〜３５m'],['３５m〜']], {prompt:'選択'}, class: "form-control" %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :季節 %></div>
+      <div class="col-8 d-flex flex-row"><%= f.select :season, [['１月' ], ['２月'],['３月'],['４月'],['５月'],['６月'],['７月'],['８月'],['９月'],['１０月'],['１１月'],['１２月']], {prompt:'選択'}, class: "form-control" %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :利用したショップ %></div>
+      <div class="col-8"><%= f.text_field :dive_shop, placeholder: "ダイビングショップ名 (セルフダイビング）", class: "form-control" %></div>
+    </div>
+
+    <div class="text-center mt-5">
+      <%= f.submit "更新", class: "btn btn-success", style: "width:120px" %>
+      <%= link_to "削除", dive_path(@dive.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger", style:"width:120px" %>
+    </div>
+
+  <% end %>
+</div>

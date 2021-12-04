@@ -6,6 +6,7 @@ class DivesController < ApplicationController
 
   def create
     @dive = Dive.new(dive_params)
+    @dive.user_id = current_user.id
     if @dive.save
       redirect_to dives_path
     else
@@ -14,7 +15,8 @@ class DivesController < ApplicationController
   end
 
   def index
-    @dives = Dive.all.includes(:user)
+    @dives = Dive.all
+    @user = current_user
   end
 
   def show
@@ -33,6 +35,7 @@ class DivesController < ApplicationController
   end
 
   def destroy
+    @dive = Dive.find(params[:id])
     @dive.destroy
     redirect_to dives_path
   end

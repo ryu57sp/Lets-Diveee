@@ -1,0 +1,25 @@
+<h1 class="text-center mt-3">Adventures🤿</h1>
+
+<table class="table table-light table-striped">
+  <thead>
+    <tr class="text-center text-white bg-primary">
+      <th>投稿日</th>
+      <th>投稿者</th>
+      <th>タイトル</th>
+      <th>ポイント名</th>
+      <th>時期</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dives.each do |dive| %>
+      <tr class="text-center">
+        <td><%= dive.created_at.strftime("%Y/%m/%d") %></td>
+        <td><%= dive.user.name %></td>
+        <td><%= link_to dive.title, root_path %></td>
+        <td><%= dive.dive_point %></td>
+        <td><%= dive.season %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
