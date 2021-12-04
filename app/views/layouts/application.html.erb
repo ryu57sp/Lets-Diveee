@@ -25,6 +25,9 @@
                   <%= link_to "About", about_path, class:"fas fa-camera nav-link text-light" %>
                 </li>
                 <li>
+                  <%= link_to "マイページ", user_path(current_user.id), class:"fas fa-user nav-link text-light" %>
+                </li>
+                <li>
                   <%= link_to "新規投稿", new_dive_path, class:"fas fa-plus-square nav-link text-light" %>
                 </li>
                 <li>
