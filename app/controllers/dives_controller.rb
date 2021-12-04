@@ -25,6 +25,9 @@ class DivesController < ApplicationController
 
   def edit
     @dive = Dive.find(params[:id])
+    unless @dive.user == current_user
+      redirect_to dives_path
+    end
   end
 
   def update
