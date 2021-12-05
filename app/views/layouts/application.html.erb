@@ -38,6 +38,12 @@
                 </li>
               <% else %>
                 <li>
+                  <%= link_to "About", about_path, class:"fas fa-camera nav-link text-light" %>
+                </li>
+                <li>
+                  <%= link_to "投稿一覧", dives_path, class:"fas fa-list nav-link text-light" %>
+                </li>
+                <li>
                   <%= link_to "新規登録", new_user_registration_path, class:"fas fa-user-plus nav-link text-light" %>
                 </li>
                 <li>

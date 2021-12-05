@@ -1,2 +1,40 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1 class="text-center mt-5"><%= @user.name %> さんのProfile</h1>
+
+<div class="container mt-5">
+  <div class="row col-md-10">
+
+    <%= render 'profile_image', user: @user %>
+
+    <div class="col"></div>
+
+    <div class="col-md-4">
+      <table class="table table-bordered table-hover">
+        <tbody class="text-center">
+          <tr class="text-white bg-primary">
+            <th>ユーザーネーム</th>
+          </tr>
+          <tr><td><%= @user.name %></td></tr>
+          <tr class="text-white bg-primary">
+            <th>紹介文</th>
+          </tr>
+          <tr><td><%= @user.profile %></td></tr>
+          <tr class="text-white bg-primary">
+            <th>ダイバーズランク</th>
+          </tr>
+          <tr><td><%= @user.diver_rank %></td></tr>
+          <tr class="text-white bg-primary">
+            <th>投稿数</th>
+          </tr>
+          <tr><td><%= @user.dives.count %></td></tr>
+        </tbody>
+      </table>
+
+      <% if @user == current_user %>
+      <div class="text-center mt-5">
+        <%= link_to "編集する", edit_user_path, class: "btn btn-success" %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

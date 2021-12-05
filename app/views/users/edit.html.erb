@@ -1,2 +1,32 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1 class="text-center mt-5">Edit Profile</h1>
+
+<div class="col-8 offset-2 mt-5">
+  <%= form_with model: @user, local: true do |f| %>
+
+    <div class="form-group row">
+      <div class="col-4"><%= f.label :プロフィール画像 %></div>
+      <div class="col-8"><%= f.attachment_field :profile_image %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :ユーザーネーム %></div>
+      <div class="col-8"><%= f.text_field :name, class: "form-control" %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :紹介文 %></div>
+      <div class="col-8"><%= f.text_field :profile, class: "form-control" %></div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col-4"><%= f.label :ダイバーズランク %></div>
+      <div class="col-8"><%= f.select :diver_rank,[['オープンフォーター' ], ['アドバンスド'],['レスキュー'],['マスター・スクーバ'],['ダイブマスター'],['インストラクター以上']], {prompt:'選択'}, class: "form-control" %></div>
+    </div>
+
+    <div class="text-center mt-5">
+      <%= f.submit "更新", class: "btn btn-success", style: "width:120px" %>
+      <%= link_to "退会する", users_quit_path, class: "btn btn-danger", style:"width:120px" %>
+    </div>
+
+  <% end %>
+</div>

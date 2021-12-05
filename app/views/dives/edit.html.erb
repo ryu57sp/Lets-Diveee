@@ -25,17 +25,17 @@
 
     <div class="form-group row mt-3">
       <div class="col-4"><%= f.label :水温 %></div>
-      <div class="col-8 d-flex flex-row"><%= f.select :water_temperature,[['１０℃以下' ], ['１０〜１３℃'],['１３〜１５℃'],['１５〜１８℃'],['１８〜２０℃'],['２０〜２３℃'],['２３〜２５℃'],['２５〜２８℃'],['２８〜３０℃'],['３０℃以上']], {prompt:'選択'}, class: "form-control" %></div>
+      <div class="col-8"><%= f.select :water_temperature,[['１０℃以下' ], ['１０〜１３℃'],['１３〜１５℃'],['１５〜１８℃'],['１８〜２０℃'],['２０〜２３℃'],['２３〜２５℃'],['２５〜２８℃'],['２８〜３０℃'],['３０℃以上']], {prompt:'選択'}, class: "form-control" %></div>
     </div>
 
     <div class="form-group row mt-3">
       <div class="col-4"><%= f.label :潜水深度 %></div>
-      <div class="col-8 d-flex flex-row"><%= f.select :maximum_depth, [['５〜７m' ], ['７〜１０m'],['１０〜１５m'],['１５〜２０m'],['２０〜２５m'],['２５〜３０m'],['３０〜３５m'],['３５m〜']], {prompt:'選択'}, class: "form-control" %></div>
+      <div class="col-8"><%= f.select :maximum_depth, [['５〜７m' ], ['７〜１０m'],['１０〜１５m'],['１５〜２０m'],['２０〜２５m'],['２５〜３０m'],['３０〜３５m'],['３５m〜']], {prompt:'選択'}, class: "form-control" %></div>
     </div>
 
     <div class="form-group row mt-3">
       <div class="col-4"><%= f.label :時期 %></div>
-      <div class="col-8 d-flex flex-row"><%= f.select :season, [['１月' ], ['２月'],['３月'],['４月'],['５月'],['６月'],['７月'],['８月'],['９月'],['１０月'],['１１月'],['１２月']], {prompt:'選択'}, class: "form-control" %></div>
+      <div class="col-8"><%= f.select :season, [['１月' ], ['２月'],['３月'],['４月'],['５月'],['６月'],['７月'],['８月'],['９月'],['１０月'],['１１月'],['１２月']], {prompt:'選択'}, class: "form-control" %></div>
     </div>
 
     <div class="form-group row mt-3">

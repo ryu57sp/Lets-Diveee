@@ -16,7 +16,6 @@ class DivesController < ApplicationController
 
   def index
     @dives = Dive.all
-    @user = current_user
   end
 
   def show
