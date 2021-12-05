@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get "about" => 'homes#about'
   devise_for :users, module: "users"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :dives
+  resources :dives do
+    resources :dive_comments, only: [:create, :destroy]
+  end
+
   resources :users, only: [:show, :edit, :update] do
     member do
       get "quit"

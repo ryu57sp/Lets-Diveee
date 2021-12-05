@@ -7,6 +7,7 @@ class User < ApplicationRecord
   attachment :profile_image
 
   has_many :dives, dependent: :destroy
+  has_many :dive_comments, dependent: :destroy
 
   def active_for_authentication?
     super && (self.is_deleted == false)

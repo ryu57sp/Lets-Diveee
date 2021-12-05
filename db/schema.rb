@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_04_130850) do
+ActiveRecord::Schema.define(version: 2021_12_05_115000) do
+
+  create_table "dive_comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dive_id"
+    t.text "comment"
+    t.integer "reply"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "dives", force: :cascade do |t|
     t.integer "user_id"
