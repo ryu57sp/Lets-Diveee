@@ -8,4 +8,8 @@ class User < ApplicationRecord
 
   has_many :dives, dependent: :destroy
 
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
+
 end
