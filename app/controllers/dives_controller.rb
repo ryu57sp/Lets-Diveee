@@ -20,6 +20,7 @@ class DivesController < ApplicationController
 
   def show
     @dive = Dive.find(params[:id])
+    @dive_comment = DiveComment.new
   end
 
   def edit

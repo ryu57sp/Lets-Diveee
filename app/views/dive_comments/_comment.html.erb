@@ -1,0 +1,26 @@
+<div class="">
+<p>コメント件数：<%= @dive.dive_comments.count %></p>
+<% @dive.dive_comments.each do |dive_comment| %>
+  <%= attachment_image_tag dive_comment.user, :profile_image, size: "30x30", class: "rounded-circle" %>
+  <%= dive_comment.created_at.strftime('%Y/%m/%d') %></br>
+  <div class="mt-1">
+    <%= dive_comment.user.name %>
+    『<%= dive_comment.comment %>』
+  </div>
+  <% if dive_comment.user == current_user %>
+  <div class="mt-1">
+    <%= link_to "削除", dive_dive_comment_path(dive_comment.dive, dive_comment), method: :delete, class: "btn btn-danger" %>
+  </div>
+  <% end %>
+<% end %>
+
+</div>
+
+<div class="row mt-1">
+  <div class="col-sm-4 mt-3">
+    <%= form_with(model:[dive, dive_comment], local: true) do |f| %>
+      <%= f.text_field :comment, class: "round-pill form-control" %>
+      <div class="mt-2"><%= f.submit "送信する", class: "btn btn-success" %></div>
+    <% end %>
+  </div>
+</div>
