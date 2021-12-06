@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :rooms
+  get 'chat/:id', to: 'chats#show', as: 'chat'
   resources :chats, only: [:create]
 
 end
