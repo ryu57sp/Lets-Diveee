@@ -29,6 +29,8 @@
         </tbody>
       </table>
 
+      <%= render 'relationships/follow', user: @user %>
+
       <% if @user == current_user %>
       <div class="text-center mt-5">
         <%= link_to "編集する", edit_user_path, class: "btn btn-success" %>
