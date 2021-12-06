@@ -4,10 +4,11 @@
   <thead>
     <tr class="text-center text-white bg-primary">
       <th>投稿日</th>
+      <th>イメージ</th>
       <th>投稿者</th>
       <th>タイトル</th>
       <th>ポイント名</th>
-      <th>時期</th>
+      <th>潜水深度</th>
     </tr>
   </thead>
 
@@ -15,10 +16,11 @@
     <% @dives.each do |dive| %>
       <tr class="text-center">
         <td><%= dive.created_at.strftime("%Y/%m/%d") %></td>
+        <td><%= attachment_image_tag dive.user, :profile_image, size: "30x30", class: "rounded-circle" %></td>
         <td><%= link_to dive.user.name, user_path(dive.user_id) %></td>
         <td><%= link_to dive.title, dive_path(dive.id) %></td>
         <td><%= dive.dive_point %></td>
-        <td><%= dive.season %></td>
+        <td><%= dive.maximum_depth %></td>
       </tr>
     <% end %>
   </tbody>
