@@ -1,6 +1,6 @@
-<div class="">
-<p>コメント件数：<%= @dive.dive_comments.count %></p>
-<% @dive.dive_comments.each do |dive_comment| %>
+<div>
+<p>コメント件数：<%= dive.dive_comments.count %>　・　いいね数：<%= dive.favorites.count %></p>
+<% dive.dive_comments.each do |dive_comment| %>
   <%= attachment_image_tag dive_comment.user, :profile_image, size: "30x30", class: "rounded-circle" %>
   <%= dive_comment.created_at.strftime('%Y/%m/%d') %></br>
   <div class="mt-1">

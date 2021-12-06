@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <% if dive.favorited_by?(current_user) %>
+    <p>
+      <%= link_to dive_favorites_path(dive.id), method: :delete do %>
+        ♥<%= dive.favorites.count %>
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to dive_favorites_path(dive.id), method: :post do %>
+        ♡<%= dive.favorites.count %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
