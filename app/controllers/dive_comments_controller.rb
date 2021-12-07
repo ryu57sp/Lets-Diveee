@@ -6,6 +6,8 @@ class DiveCommentsController < ApplicationController
     @comment = current_user.dive_comments.new(comment_params)
     @comment.dive_id = @dive.id
     @comment.save
+    #通知機能
+    @dive.create_notification_comment!(current_user, @comment.id)
     redirect_to dive_path(@dive.id)
   end
 

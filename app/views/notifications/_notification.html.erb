@@ -1,0 +1,31 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+
+<div class="col-md-6 mx-auto mt-5">
+  <table class="table table-border-bottom form-inline">
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to user_path(visitor), class: "text-primary" do %><strong><%= visitor.name %>さん</strong><% end %> が
+          <% case notification.action %>
+          <% when 'follow' then %>
+            <%= "あなたをフォローしました。" %>
+          <% when  'favorite' then %>
+            <%= link_to 'あなたの投稿', notification.dive, class: "text-primary", style: "font-weight: bold;" %><%= " にいいねしました。" %>
+          <% when 'comment' then %>
+            <% if notification.dive.user_id == visited.id %>
+              <%= link_to "あなたの投稿", notification.dive, class: "text-primary", style: "font-weight: bold;" %>
+            <% else %>
+              <%= link_to user_path(visited.id), class: "text-primary" do %><%= notification.dive.user.name + "さんの" %><% end %><%= link_to "投稿", notification.dive, class: "text-dark", style: "font-weight: bold;" %>
+            <% end %>
+            <span>
+              <%= "にコメントしました。" %>
+              <p class="text-secondary"><%= DiveComment.find_by(id: notification.dive_comment_id).comment %></p>
+            </span>
+          <% end %>
+          <small class="text-right text-muted"><%= time_ago_in_words(notification.created_at).upcase %></small>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
