@@ -21,7 +21,6 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-
                 <li class="mt-1 mr-3">
                   <%= link_to notifications_path do %>
                     <% if unchecked_notifications.any? %>
@@ -66,6 +65,7 @@
                 </li>
               <% end %>
             </ul>
+            <%= render 'searches/search' %>
           </div>
 
         </div>
