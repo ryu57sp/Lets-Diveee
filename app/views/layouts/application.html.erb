@@ -21,14 +21,26 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
+
+                <li class="mt-1 mr-3">
+                  <%= link_to notifications_path do %>
+                    <% if unchecked_notifications.any? %>
+                    <span class="fa-fw text-white">
+                      <i class="fas fa-bell"></i>
+                      <% if unchecked_notifications.exists? %>
+                        <span class="rounded-circle text-center"><%= unchecked_notifications.count %></span>
+                      <% end %>
+                    </span>
+                    <% else %>
+                    <i class="fas fa-bell text-white"></i>
+                    <% end %>
+                  <% end %>
+                </li>
                 <li>
                   <%= link_to "About", about_path, class:"fas fa-camera nav-link text-light" %>
                 </li>
                 <li>
                   <%= link_to "マイページ", user_path(current_user.id), class:"fas fa-user nav-link text-light" %>
-                </li>
-                <li>
-                  <%= link_to "通知一覧", notifications_path, class:"fas fa-bell nav-link text-light" %>
                 </li>
                 <li>
                   <%= link_to "新規投稿", new_dive_path, class:"fas fa-plus-square nav-link text-light" %>
