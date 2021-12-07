@@ -20,7 +20,19 @@ class ChatsController < ApplicationController
 
   def create
     @chat = current_user.chats.new(chat_params)
+    @room = @chat.room
     if @chat.save
+      @anothermember=UserRoom.where(room_id: @room.id).where.not(user_id: current_user.id)
+      @theid=@anothermember.find_by(room_id: @room.id)
+      notification = current_user.active_notifications.new(
+        room_id: @room.id,
+        chat_id: @chat.id,
+        visited_id: @theid.user_id,
+        visitor_id: current_user.id,
+        action: 'dm'
+      )
+      notification.checked = true if notification.visitor_id == notification.visited_id
+      notification.save if notification.valid?
       redirect_to request.referrer
     else
       redirect_to root_path

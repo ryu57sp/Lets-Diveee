@@ -22,6 +22,8 @@
               <%= "にコメントしました。" %>
               <p class="text-secondary"><%= DiveComment.find_by(id: notification.dive_comment_id).comment %></p>
             </span>
+          <% when 'dm' then %>
+            あなたにDMを送りました。
           <% end %>
           <small class="text-right text-muted"><%= time_ago_in_words(notification.created_at).upcase %></small>
         </td>
