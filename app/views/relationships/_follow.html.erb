@@ -1,7 +1,7 @@
 <div class="text-center">
 
-  <td>フォロー数: <%= user.followings.count %></td> ・
-  <td>フォロワー数: <%= user.followers.count %></td>
+  <td>フォロー数: <%= link_to @user.followings.count, user_followings_path(@user.id) %></td> ・
+  <td>フォロワー数: <%= link_to @user.followers.count, user_followers_path(@user.id) %></td>
 
   <div class="mt-2">
     <% if user_signed_in? %>
