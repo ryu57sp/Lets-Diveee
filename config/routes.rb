@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'ranks/index'
   root to: 'homes#top'
   get "about" => 'homes#about'
   get "search" => 'searches#search'
@@ -23,5 +24,6 @@ Rails.application.routes.draw do
   resources :chats, only: [:create]
 
   resources :notifications, only: [:index]
+  resources :ranks, only: [:index]
 
 end
