@@ -5,10 +5,25 @@
   width: 100%;
 }
 
-.about-image{
-  width:47%;
-}
-
 .box{
   margin: 0 auto;
+}
+
+#box{
+  width: 53%;
+  height: 450px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.image1 {
+  background-image: image-url("fish.jpg");
+}
+
+.image2 {
+  background-image: image-url("turtle.jpg");
+}
+
+.image3 {
+  background-image: image-url("underwater.jpg");
 }
