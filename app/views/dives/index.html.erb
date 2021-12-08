@@ -1,27 +1,18 @@
-<h1 class="text-center mt-3">Adventures🤿</h1>
+<h1 class="text-center mt-5 mr-5">Adventures🤿</h1>
 
-<table class="table table-light table-striped">
-  <thead>
-    <tr class="text-center text-white bg-primary">
-      <th>投稿日</th>
-      <th>イメージ</th>
-      <th>投稿者</th>
-      <th>タイトル</th>
-      <th>ポイント名</th>
-      <th>潜水深度</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dives.each do |dive| %>
-      <tr class="text-center">
-        <td><%= dive.created_at.strftime("%Y/%m/%d") %></td>
-        <td><%= attachment_image_tag dive.user, :profile_image, size: "30x30", class: "rounded-circle" %></td>
-        <td><%= link_to dive.user.name, user_path(dive.user_id) %></td>
-        <td><%= link_to dive.title, dive_path(dive.id) %></td>
-        <td><%= dive.dive_point %></td>
-        <td><%= dive.maximum_depth %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container col-md-6 mb-5">
+<div class="card-list-container pt-3 row">
+  <% @dives.each do |dive| %>
+    <div class="card mr-2 mt-4 shadow-lg">
+      <%= link_to dive_path(dive) do %>
+        <%= attachment_image_tag dive, :image, :fill, 300, 230 ,class:"card-img-top py-2 px-2";%>
+      <% end %>
+      <div class="card-body">
+      <div class="text-center card-title"><%= link_to dive.user.name, user_path(dive.user_id) %></div>
+      <div class="text-center card-title"><%= dive.title %></div>
+      <div class="text-center card-title">❤️<%= dive.favorites.count %>　・　💬<%= dive.dive_comments.count %></div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>

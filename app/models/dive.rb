@@ -6,7 +6,6 @@ class Dive < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
-  validates :image_id, presence: true
   validates :title, presence: true
   validates :body, presence: true
   validates :dive_point, presence: true
