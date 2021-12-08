@@ -8,7 +8,10 @@
           <%= attachment_image_tag dive, :image, :fill, 300, 230 ,class:"card-img-top py-2 px-2";%>
         <% end %>
         <div class="card-body">
-        <div class="text-center card-title"><%= link_to dive.user.name, user_path(dive.user_id) %></div>
+        <div class="text-center card-title">
+          <%= attachment_image_tag dive.user, :profile_image, size: "25x25", class: "rounded-circle" %>
+          <%= link_to dive.user.name, user_path(dive.user_id) %>
+        </div>
         <div class="text-center card-title"><%= dive.title %></div>
         <div class="text-center card-title">❤️<%= dive.favorites.count %>　・　💬<%= dive.dive_comments.count %></div>
         </div>
