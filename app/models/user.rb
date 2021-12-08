@@ -44,4 +44,12 @@ class User < ApplicationRecord
     end
   end
 
+  def self.search(search, word)
+    if search != ""
+      @user = User.where("name LIKE ?", "%#{word}%")
+    else
+      @user = User.all
+    end
+  end
+
 end
