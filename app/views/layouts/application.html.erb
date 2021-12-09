@@ -97,5 +97,11 @@
     </header>
 
     <%= yield %>
+    <span id="back">
+      <a href="">
+        <%= image_tag asset_path('to-top.jpg'), data: {"turbolinks"=>false}, class: "arrow" %>
+      </a>
+    </span>
+
   </body>
 </html>
