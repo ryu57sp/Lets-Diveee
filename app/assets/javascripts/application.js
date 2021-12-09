@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
+//= require turbolinks
 //= require_tree .
 
 $(document).ready(function () {
@@ -38,5 +39,15 @@ $(document).ready(function () {
     keyboardOnAlways : true,
     // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
     hidePrevious : false
+  });
+});
+
+document.addEventListener("turbolinks:load", function () {
+  $(function(){
+    $('.menu-trigger').on('click',function(event){
+      $(this).toggleClass('active');
+      $('#sp-menu').fadeToggle();
+      // event.PreventDefault();
+    });
   });
 });

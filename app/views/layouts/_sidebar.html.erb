@@ -1,0 +1,41 @@
+<% if user_signed_in? %>
+  <li>
+    <%= link_to "サイトについて", about_path, data:{"turbolinks" => false} %>
+  </li>
+  <li>
+    <%= link_to "マイページ", user_path(current_user.id) %>
+  </li>
+  <li>
+    <%= link_to "ランキング", ranks_path %>
+  </li>
+  <li>
+    <%= link_to "通知一覧", notifications_path %>
+  </li>
+  <li>
+    <%= link_to "新規投稿", new_dive_path %>
+  </li>
+  <li>
+    <%= link_to "投稿一覧", dives_path %>
+  </li>
+  <li>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to "このサイトについて", about_path, data:{"turbolinks" => false} %>
+  </li>
+  <li>
+    <%= link_to "ランキング", ranks_path %>
+  </li>
+  <li>
+    <%= link_to "投稿一覧", dives_path %>
+  </li>
+  <li>
+    <%= link_to "新規登録", new_user_registration_path %>
+  </li>
+  <li>
+    <%= link_to "ログイン", new_user_session_path %>
+  </li>
+<% end %>
+
+<%= render 'searches/search_form' %>

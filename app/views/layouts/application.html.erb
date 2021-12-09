@@ -36,7 +36,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to "About", about_path, class:"fas fa-camera nav-link text-light" %>
+                  <%= link_to "About", about_path, data:{"turbolinks" => false}, class:"fas fa-camera nav-link text-light" %>
                 </li>
                 <li>
                   <%= link_to "マイページ", user_path(current_user.id), class:"fas fa-user nav-link text-light" %>
@@ -55,7 +55,7 @@
                 </li>
               <% else %>
                 <li>
-                  <%= link_to "About", about_path, class:"fas fa-camera nav-link text-light" %>
+                  <%= link_to "About", about_path, data:{"turbolinks" => false}, class:"fas fa-camera nav-link text-light" %>
                 </li>
                 <li>
                   <%= link_to "ランキング", ranks_path, class:"fas fa-crown nav-link text-light" %>
@@ -72,6 +72,20 @@
               <% end %>
             </ul>
             <%= render 'searches/search_form' %>
+          </div>
+
+           <div id="sp-menu">
+            <ul>
+              <%= render "layouts/sidebar" %>
+            </ul>
+          </div>
+
+          <div id="sidebar">
+            <span class="menu-trigger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </div>
 
         </div>
