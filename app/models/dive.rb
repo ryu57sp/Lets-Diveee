@@ -6,7 +6,7 @@ class Dive < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
-  validates :title, presence: true
+  validates :title, presence: true, length:{maximum: 17}
   validates :body, presence: true
   validates :dive_point, presence: true
   validates :water_temperature, presence: true
