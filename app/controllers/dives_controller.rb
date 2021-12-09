@@ -15,7 +15,7 @@ class DivesController < ApplicationController
   end
 
   def index
-    @dives = Dive.all
+    @dives = Dive.all.page(params[:page])
   end
 
   def show
