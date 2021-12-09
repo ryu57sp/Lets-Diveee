@@ -1,14 +1,18 @@
 <% if user_signed_in? %>
   <% if dive.favorited_by?(current_user) %>
     <p>
-      <%= link_to dive_favorites_path(dive.id), method: :delete do %>
-        ♥<%= dive.favorites.count %>
+      <%= link_to dive_favorites_path(dive.id), method: :delete, remote: true do %>
+        <i class="fa fa-heart like-btn">
+          <%= dive.favorites.count %>
+        </i>
       <% end %>
     </p>
     <% else %>
     <p>
-      <%= link_to dive_favorites_path(dive.id), method: :post do %>
-        ♡<%= dive.favorites.count %>
+      <%= link_to dive_favorites_path(dive.id), method: :post, remote: true do %>
+        <i class="fa fa-heart unlike-btn">
+          <%= dive.favorites.count %>
+        </i>
       <% end %>
     </p>
   <% end %>

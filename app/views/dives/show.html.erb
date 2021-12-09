@@ -3,7 +3,9 @@
 <div class="row offset-1 mt-5">
   <div class="col-lg-5">
     <%= attachment_image_tag @dive, :image, :fill, 500, 350 %>
-    <%= render 'favorites/favorite', dive: @dive %>
+    <div id="favorite_btn_<%= @dive.id %>">
+      <%= render 'favorites/favorite', dive: @dive %>
+    </div>
     <%= render 'dive_comments/comment', dive: @dive, dive_comment: @dive_comment %>
   </div>
 
