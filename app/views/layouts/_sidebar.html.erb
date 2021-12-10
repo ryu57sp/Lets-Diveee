@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <li>
-    <%= link_to "サイトについて", about_path, data:{"turbolinks" => false} %>
+    <%= link_to "サイト概要", about_path, data:{"turbolinks" => false} %>
   </li>
   <li>
     <%= link_to "マイページ", user_path(current_user.id) %>
@@ -22,7 +22,7 @@
   </li>
 <% else %>
   <li>
-    <%= link_to "このサイトについて", about_path, data:{"turbolinks" => false} %>
+    <%= link_to "サイト概要", about_path, data:{"turbolinks" => false} %>
   </li>
   <li>
     <%= link_to "ランキング", ranks_path %>
