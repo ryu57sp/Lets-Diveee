@@ -11,6 +11,9 @@
         <% end %>
         <div class="card-body">
         <div class="text-center card-title">
+          <div class="mb-2">
+            <%= dive.created_at.strftime('%Y/%m/%d') %>
+          </div>
           <%= attachment_image_tag dive.user, :profile_image, size: "25x25", class: "rounded-circle" %>
           <%= link_to dive.user.name, user_path(dive.user_id) %>
         </div>
