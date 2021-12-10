@@ -10,6 +10,7 @@ class DivesController < ApplicationController
     if @dive.save
       redirect_to dives_path
     else
+      flash[:error] = '投稿に失敗しました。未記入の項目があります。'
       render :new
     end
   end
