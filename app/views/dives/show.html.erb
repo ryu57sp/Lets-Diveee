@@ -28,7 +28,7 @@
 
     <div class="row mt-3">
       <div class="detail col-5">内容</div>
-      <div class="answer col-7"><%= @dive.body %></div>
+      <div class="answer col-7"><%= render_with_hashtags(@dive.body) %></div>
     </div>
 
     <div class="row mt-3">

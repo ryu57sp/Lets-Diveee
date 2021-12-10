@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get 'ranks/index'
+
   root to: 'homes#top'
   get "about" => 'homes#about'
   get "search" => 'searches#search'
+  get 'ranks/index'
+  get '/dive/hashtag/:name' => 'dives#hashtag'
+
   devise_for :users, module: "users"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :dives do

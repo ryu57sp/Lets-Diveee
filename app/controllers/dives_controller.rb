@@ -1,5 +1,5 @@
 class DivesController < ApplicationController
-
+  helper :all
   def new
     @dive = Dive.new
   end
@@ -44,9 +44,16 @@ class DivesController < ApplicationController
     redirect_to dives_path
   end
 
+  def hashtag
+    @user = current_user
+    @tag = Hashtag.find_by(hashname: params[:name])
+    @dives = @tag.dives
+  end
+
+
   private
   def dive_params
-    params.require(:dive).permit(:image, :dive_point, :title, :body, :water_temperature, :maximum_depth, :season, :dive_shop)
+    params.require(:dive).permit(:caption, :image, :dive_point, :title, :body, :water_temperature, :maximum_depth, :season, :dive_shop)
   end
 
 end

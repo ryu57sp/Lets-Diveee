@@ -1,10 +1,13 @@
 class Dive < ApplicationRecord
+
   attachment :image
 
   belongs_to :user
   has_many :dive_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :hashtag_relations
+  has_many :hashtags, through: :hashtag_relations
 
   validates :title, presence: true, length:{maximum: 17}
   validates :body, presence: true
@@ -15,6 +18,29 @@ class Dive < ApplicationRecord
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
+  end
+
+  #ハッシュタグに関して
+  after_create do
+    dive = Dive.find_by(id: self.id)
+    #ハッシュタグに打ち込まれたハッシュタグを検出
+    hashtags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    dive.hashtags = []
+    hashtags = uniq.map do |hashtag|
+      #ハッシュタグは先頭の#を外した上で保存
+      tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      dive.hashtags << tag
+    end
+  end
+
+  before_update do
+    dive = Dive.find_by(id: self.id)
+    dive.hashtags.clear
+    hashtags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    hashtags.uniq.map do |hashtag|
+      tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      dive.hashtags << tag
+    end
   end
 
   #通知機能に関して

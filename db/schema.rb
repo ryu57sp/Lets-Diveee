@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_040833) do
+ActiveRecord::Schema.define(version: 2021_12_10_100523) do
 
   create_table "chats", force: :cascade do |t|
     t.integer "user_id"
@@ -48,6 +48,22 @@ ActiveRecord::Schema.define(version: 2021_12_07_040833) do
     t.integer "dive_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "hashtag_relations", force: :cascade do |t|
+    t.integer "dive_id"
+    t.integer "hashtag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dive_id"], name: "index_hashtag_relations_on_dive_id"
+    t.index ["hashtag_id"], name: "index_hashtag_relations_on_hashtag_id"
+  end
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string "hashname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashname"], name: "index_hashtags_on_hashname", unique: true
   end
 
   create_table "notifications", force: :cascade do |t|
