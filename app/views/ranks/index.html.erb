@@ -8,9 +8,9 @@
 
       <div class="text-center mr-2 mt-4">
         <% if i == 1 %>
+        <span class="text-center text-dark"><i class="fas fa-award text-warning"></i>第１位・ ❤️<%= dive.favorites.count %></span></br>
         <div class="line">
-          <span class="text-center text-dark"><i class="fas fa-award text-warning"></i>第１位・ ❤️<%= dive.favorites.count %></span></br>
-          <%= dive.title %>
+          【<%= dive.title %>】
         </div>
         <div class="rank">
           <%= link_to dive_path(dive) do %>
@@ -18,9 +18,9 @@
           <% end %>
         </div>
         <% elsif i  == 2 %>
+        <span class="text-center text-dark"><i class="fas fa-award text-warning"></i>第２位・ ❤️<%= dive.favorites.count %></span></br>
         <div class="line">
-          <span class="text-center text-dark"><i class="fas fa-award text-warning"></i>第２位・ ❤️<%= dive.favorites.count %></span></br>
-          <%= dive.title %>
+          【<%= dive.title %>】
         </div>
         <div class="rank">
           <%= link_to dive_path(dive) do %>
@@ -28,9 +28,9 @@
           <% end %>
         </div>
         <% elsif i  == 3 %>
+        <span class="text-center text-dark"><i class="fas fa-award text-warning"></i>第３位・ ❤️<%= dive.favorites.count %></span></br>
         <div class="line">
-          <span class="text-center text-dark"><i class="fas fa-award text-warning"></i>第３位・ ❤️<%= dive.favorites.count %></span></br>
-          <%= dive.title %>
+          【<%= dive.title %>】
         </div>
         <div class="rank">
           <%= link_to dive_path(dive) do %>
