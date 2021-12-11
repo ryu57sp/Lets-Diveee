@@ -1,5 +1,5 @@
 # Let's Diveee!!!
-<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/honu.jpg" width="100%">
+<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/top.jpg" width="100%">
 
 ## サイト概要
 このサイトは海が好きな人が集まるダイビングに特化したサイトです。
@@ -46,7 +46,7 @@
 - 綺麗な海の写真を見て癒やされたい時
 
 ## 設計書
-- 画面遷移図
+- 画面遷移図（ハッシュタグ機能を後から追加しました。）
 
 <img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/flow.jpg" width="100%">
 
