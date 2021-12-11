@@ -6,7 +6,7 @@ class Dive < ApplicationRecord
   has_many :dive_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :notifications, dependent: :destroy
-  has_many :hashtag_relations
+  has_many :hashtag_relations, dependent: :destroy
   has_many :hashtags, through: :hashtag_relations
 
   validates :title, presence: true, length:{maximum: 17}
@@ -26,7 +26,7 @@ class Dive < ApplicationRecord
     #ハッシュタグに打ち込まれたハッシュタグを検出
     hashtags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
     dive.hashtags = []
-    hashtags = uniq.map do |hashtag|
+    hashtags.uniq.map do |hashtag|
       #ハッシュタグは先頭の#を外した上で保存
       tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
       dive.hashtags << tag
