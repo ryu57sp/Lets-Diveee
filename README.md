@@ -1,5 +1,5 @@
 # Let's Diveee!!!
-<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/honu.jpg" width="70%">
+<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/honu.jpg" width="100%">
 
 ## サイト概要
 このサイトは海が好きな人が集まるダイビングに特化したサイトです。
