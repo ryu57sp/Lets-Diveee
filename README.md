@@ -46,7 +46,8 @@
 - 綺麗な海の写真を見て癒やされたい時
 
 ## 設計書
-- 画面遷移図（ハッシュタグ機能を後から追加しました。）
+（ハッシュタグ機能は後から追加しました。）
+- 画面遷移図
 
 <img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/flow.jpg" width="100%">
 
