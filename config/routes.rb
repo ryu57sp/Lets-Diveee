@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :dives do
     resources :dive_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
+    resource :bookmarks, only: [:create, :destroy]
   end
 
   resources :users, only: [:show, :edit, :update] do
@@ -28,5 +29,6 @@ Rails.application.routes.draw do
 
   resources :notifications, only: [:index]
   resources :ranks, only: [:index]
+  resources :bookmarks, only: [:index]
 
 end

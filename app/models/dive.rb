@@ -8,6 +8,7 @@ class Dive < ApplicationRecord
   has_many :notifications, dependent: :destroy
   has_many :hashtag_relations, dependent: :destroy
   has_many :hashtags, through: :hashtag_relations
+  has_many :bookmarks, dependent: :destroy
 
   validates :title, presence: true, length:{maximum: 17}
   validates :body, presence: true
@@ -18,6 +19,10 @@ class Dive < ApplicationRecord
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
+  end
+
+  def bookmarked_by?(user)
+    bookmarks.where(user_id: user.id).exists?
   end
 
   #ハッシュタグに関して
