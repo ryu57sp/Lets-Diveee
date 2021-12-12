@@ -80,6 +80,8 @@ gem 'bootstrap4-kaminari-views'
 gem 'pry-byebug'
 gem 'rubocop-airbnb'
 
+gem 'impressionist', '~>1.6.1'
+
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

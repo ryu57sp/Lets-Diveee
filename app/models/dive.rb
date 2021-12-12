@@ -17,6 +17,8 @@ class Dive < ApplicationRecord
   validates :season, presence: true
   validates :dive_shop, presence: true
 
+  is_impressionable
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end

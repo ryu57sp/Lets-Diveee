@@ -22,6 +22,7 @@ class DivesController < ApplicationController
   def show
     @dive = Dive.find(params[:id])
     @dive_comment = DiveComment.new
+    impressionist(@dive, nil, unique: [:impressionable_id, :ip_address])
   end
 
   def edit
