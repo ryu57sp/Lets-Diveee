@@ -1,6 +1,6 @@
 <% if @dive.user.is_deleted == false %>
-
 <% if user_signed_in? %>
+
   <% if dive.bookmarked_by?(current_user) %>
     <%= link_to dive_bookmarks_path(dive), method: :delete, remote: true, class: "text-dark" do %>
       <i class="fas fa-bookmark"></i>
@@ -10,6 +10,6 @@
       <i class="far fa-bookmark"></i>
       <% end %>
   <% end %>
-<% end %>
 
+<% end %>
 <% end %>

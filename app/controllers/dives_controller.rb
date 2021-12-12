@@ -16,7 +16,7 @@ class DivesController < ApplicationController
   end
 
   def index
-    @dives = Dive.order('id DESC').page(params[:page])
+    @dives = Dive.includes(:user).order('id DESC').page(params[:page])
   end
 
   def show
