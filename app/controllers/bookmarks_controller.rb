@@ -8,19 +8,12 @@ class BookmarksController < ApplicationController
   def create
     @dive = Dive.find(params[:dive_id])
     bookmark = @dive.bookmarks.new(user_id: current_user.id)
-    if bookmark.save
-      redirect_to request.referer
-    else
-      redirect_to request.referer
-    end
+    bookmark.save
   end
 
   def destroy
     @dive = Dive.find(params[:dive_id])
     bookmark = @dive.bookmarks.find_by(user_id: current_user.id)
-    if bookmark.present?
-      bookmark.destroy
-      redirect_to request.referer
-    end
+    bookmark.destroy
   end
 end
