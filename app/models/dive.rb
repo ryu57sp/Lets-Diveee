@@ -14,6 +14,7 @@ class Dive < ApplicationRecord
   validates :body, presence: true
   validates :dive_point, presence: true
   validates :water_temperature, presence: true
+  validates :maximum_depth, presence: true
   validates :season, presence: true
   validates :dive_shop, presence: true
 
