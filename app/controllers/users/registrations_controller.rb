@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
 
     if resource.save
+
       yield resource if block_given?
       if resource.persisted?
         if resource.active_for_authentication?
@@ -32,7 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
 
     else
-      flash[:error] = '情報を正しく入力してください。'
+      flash[:error] = '未入力の情報または入力された情報に誤りがあります。'
       redirect_to request.referer
     end
 
