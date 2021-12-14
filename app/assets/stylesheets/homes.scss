@@ -25,5 +25,22 @@
 }
 
 .image3 {
+  width: 30%;
   background-image: image-url("underwater.jpg");
+}
+
+.slide1{
+  width: 40%;
+}
+
+.slide2{
+  width: 40%;
+}
+
+div.animation_box {
+  padding: 50px;
+  animation: fadeIn 5s ease 1s 1 normal backwards;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: 5s ease;
 }
