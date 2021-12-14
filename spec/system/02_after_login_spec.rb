@@ -139,6 +139,12 @@ describe '[STEP2] ユーザログイン後のテスト' do
       it 'ブックマークボタンのリンクが正しい' do
         expect(page).not_to have_link '' , href: dive_bookmarks_path(user)
       end
+      it 'コメント投稿フォームがある' do
+        expect(page).to have_field 'dive_comment[comment]'
+      end
+      it 'コメント送信ボタンがある' do
+        expect(page).to have_button '送信する'
+      end
     end
   end
 
@@ -249,6 +255,12 @@ describe '[STEP2] ユーザログイン後のテスト' do
       end
       it 'フォロワー数が表示される' do
         expect(page).to have_content user.followers.count
+      end
+      it 'フォロー一覧へのリンクが正しい' do
+        expect(page).to have_link user.followings.count, href: user_followings_path(user)
+      end
+      it 'フォロワー一覧へのリンクが正しい' do
+        expect(page).to have_link user.followers.count, href: user_followers_path(user)
       end
       it 'マイページ編集画面へのリンクが正しい' do
         expect(page).to have_link '編集する', href: edit_user_path(user)

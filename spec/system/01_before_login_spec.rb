@@ -135,6 +135,20 @@ describe '[STEP1] ユーザログイン前のテスト' do
         click_button '会員登録する'
         expect(current_path).to eq '/users/' + User.last.id.to_s + '/edit'
       end
+
+       context '新規登録失敗のテスト' do
+      before do
+        fill_in 'user[name]', with: ''
+        fill_in 'user[email]', with: ''
+        fill_in 'user[password]', with: ''
+        fill_in 'user[password_confirmation]', with: ''
+        click_button '会員登録する'
+      end
+
+      it '新規登録に失敗し、新規登録画面にリダイレクトされる' do
+        expect(current_path).to eq '/users/sign_up'
+      end
+    end
     end
   end
 
