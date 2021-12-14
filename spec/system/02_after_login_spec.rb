@@ -214,6 +214,9 @@ describe '[STEP2] ユーザログイン後のテスト' do
       it '更新ボタンが表示される' do
         expect(page).to have_button '更新'
       end
+      it '削除ボタンのリンクが正しい' do
+        expect(page).to have_link '削除', href: dive_path(dive)
+      end
     end
   end
 
@@ -302,4 +305,24 @@ describe '[STEP2] ユーザログイン後のテスト' do
     end
   end
 
+  describe '退会画面のテスト' do
+    before do
+      visit quit_user_path(user)
+    end
+
+    context '表示の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/users/' + user.id.to_s + '/quit'
+      end
+      it '「本当に退会しますか？」と表示される' do
+        expect(page).to have_content '本当に退会しますか？'
+      end
+      it '退会しないボタンが表示される' do
+        expect(page).not_to have_button '退会しない'
+      end
+      it '退会するボタンが表示される' do
+        expect(page).not_to have_button '退会する'
+      end
+    end
+  end
 end
