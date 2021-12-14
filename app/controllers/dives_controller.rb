@@ -48,7 +48,7 @@ class DivesController < ApplicationController
   def hashtag
     @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
-    @dives = @tag.dives
+    @dives = @tag.dives.includes(:user)
   end
 
 
