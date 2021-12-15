@@ -31,7 +31,9 @@
 
       <% if @user.is_deleted == false %>
 
+        <div id="follow_btn">
         <%= render 'relationships/follow', user: @user %>
+        </div>
 
         <% if user_signed_in? %>
           <% if current_user != @user %>
