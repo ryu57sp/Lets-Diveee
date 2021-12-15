@@ -145,6 +145,15 @@ body{
 }
 //ここまで
 
+//無限スクロール
+nav.pagination {
+  display: none;
+}
+.scroll-list {
+  padding: 0;
+}
+//ここまで
+
 @media screen and (max-width: 1200px){
   .navbar-nav{
     display: none;

@@ -2,7 +2,7 @@ class BookmarksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @bookmarks = Bookmark.includes(:dive).includes(dive: :user).where(user_id: current_user.id)
+    @bookmarks = Bookmark.includes(:dive).includes(dive: :user).where(user_id: current_user.id).order('id DESC').page(params[:page]).per(4)
   end
 
   def create

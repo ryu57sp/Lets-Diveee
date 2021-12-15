@@ -15,7 +15,7 @@ class DivesController < ApplicationController
   end
 
   def index
-    @dives = Dive.includes(:user).order('id DESC').page(params[:page])
+    @dives = Dive.includes(:user).order('id DESC').page(params[:page]).per(4)
   end
 
   def show
@@ -47,7 +47,7 @@ class DivesController < ApplicationController
   def hashtag
     @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
-    @dives = @tag.dives.includes(:user)
+    @dives = @tag.dives.includes(:user).page(params[:page]).per(4)
   end
 
   private
