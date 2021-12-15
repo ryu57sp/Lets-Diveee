@@ -1,5 +1,7 @@
 <div>
-  <p>コメント件数：<%= dive.dive_comments.count %></p>
+  <% if @dive.user.is_deleted == false %>
+    <p>コメント件数：<%= dive.dive_comments.count %></p>
+  <% end %>
     <p class="mt-2">
       <% dive.dive_comments.each do |dive_comment| %>
     </p>
