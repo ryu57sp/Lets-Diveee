@@ -1,5 +1,4 @@
 class DivesController < ApplicationController
-
   def new
     @dive = Dive.new
   end
@@ -51,10 +50,9 @@ class DivesController < ApplicationController
     @dives = @tag.dives.includes(:user)
   end
 
-
   private
+
   def dive_params
     params.require(:dive).permit(:image, :dive_point, :title, :body, :water_temperature, :maximum_depth, :season, :dive_shop)
   end
-
 end

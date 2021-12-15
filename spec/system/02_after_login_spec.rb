@@ -134,10 +134,10 @@ describe '[STEP2] ユーザログイン後のテスト' do
         expect(page).to have_content dive.impressionist_count
       end
       it 'いいねボタンのリンクが正しい' do
-        expect(page).not_to have_link '' , href: dive_favorites_path(user)
+        expect(page).not_to have_link '', href: dive_favorites_path(user)
       end
       it 'ブックマークボタンのリンクが正しい' do
-        expect(page).not_to have_link '' , href: dive_bookmarks_path(user)
+        expect(page).not_to have_link '', href: dive_bookmarks_path(user)
       end
       it 'コメント投稿フォームがある' do
         expect(page).to have_field 'dive_comment[comment]'
@@ -184,7 +184,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
     end
   end
 
-   describe '自分の投稿編集画面のテスト' do
+  describe '自分の投稿編集画面のテスト' do
     before do
       visit edit_dive_path(dive)
     end
@@ -309,10 +309,10 @@ describe '[STEP2] ユーザログイン後のテスト' do
 
     context '表示の確認' do
       it 'フォローボタンのリンクが正しい' do
-        expect(page).not_to have_link 'フォローする' , href: user_relationships_path(user)
+        expect(page).not_to have_link 'フォローする', href: user_relationships_path(user)
       end
       it 'DMのリンクが正しい' do
-        expect(page).not_to have_link 'ダイレクトメッセージへ' , href: chat_path(user)
+        expect(page).not_to have_link 'ダイレクトメッセージへ', href: chat_path(user)
       end
     end
   end

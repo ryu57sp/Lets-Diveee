@@ -36,7 +36,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       flash[:error] = '未入力の情報または入力された情報に誤りがあります。'
       redirect_to request.referer
     end
-
   end
 
   # GET /resource/edit
@@ -86,7 +85,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys:[:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
-
 end

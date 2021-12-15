@@ -1,5 +1,4 @@
 class ChatsController < ApplicationController
-
   def show
     @user = User.find(params[:id])
     rooms = current_user.user_rooms.pluck(:room_id)
@@ -22,8 +21,8 @@ class ChatsController < ApplicationController
     @chat = current_user.chats.new(chat_params)
     @room = @chat.room
     if @chat.save
-      @anothermember=UserRoom.where(room_id: @room.id).where.not(user_id: current_user.id)
-      @theid=@anothermember.find_by(room_id: @room.id)
+      @anothermember = UserRoom.where(room_id: @room.id).where.not(user_id: current_user.id)
+      @theid = @anothermember.find_by(room_id: @room.id)
       notification = current_user.active_notifications.new(
         room_id: @room.id,
         chat_id: @chat.id,
@@ -44,5 +43,4 @@ class ChatsController < ApplicationController
   def chat_params
     params.require(:chat).permit(:message, :room_id)
   end
-
 end

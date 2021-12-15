@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Diveモデルのテスト', type: :model do
-
   describe 'バリデーションのテスト' do
     subject { dive.valid? }
 

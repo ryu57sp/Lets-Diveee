@@ -15,5 +15,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_quit_url
     assert_response :success
   end
-
 end

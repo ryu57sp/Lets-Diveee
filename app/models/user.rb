@@ -21,10 +21,10 @@ class User < ApplicationRecord
   has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
   has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
 
-  validates :name, presence: true, uniqueness: true, length:{minimum: 2, maximum: 8}
+  validates :name, presence: true, uniqueness: true, length: { minimum: 2, maximum: 8 }
 
   def active_for_authentication?
-    super && (self.is_deleted == false)
+    super && (is_deleted == false)
   end
 
   def follow(user_id)
@@ -54,5 +54,4 @@ class User < ApplicationRecord
       @user = User.all
     end
   end
-
 end

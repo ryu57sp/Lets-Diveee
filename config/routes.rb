@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: 'homes#top'
   get "about" => 'homes#about'
   get "search" => 'searches#search'
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update] do
-    resource :relationships, only:[:create, :destroy]
+    resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
     member do
@@ -30,5 +29,4 @@ Rails.application.routes.draw do
   resources :notifications, only: [:index]
   resources :ranks, only: [:index]
   resources :bookmarks, only: [:index]
-
 end

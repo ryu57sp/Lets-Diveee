@@ -1,6 +1,5 @@
 require 'rails_helper'
 RSpec.describe 'Userモデルのテスト', type: :model do
-
   describe 'バリデーションのテスト' do
     subject { user.valid? }
 
@@ -35,7 +34,7 @@ RSpec.describe 'Userモデルのテスト', type: :model do
     end
   end
 
-   describe 'アソシエーションのテスト' do
+  describe 'アソシエーションのテスト' do
     context 'Diveモデルとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:dives).macro).to eq :has_many
@@ -46,9 +45,11 @@ RSpec.describe 'Userモデルのテスト', type: :model do
   describe 'メソッドの確認' do
     describe '退会機能の確認' do
       let(:user) { FactoryBot.create(:user) }
+
       before do
         user.update(is_deleted: true)
       end
+
       it '退会後にログインすることは不可能か' do
         expect(user.active_for_authentication?).to eq false
       end
@@ -62,6 +63,7 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         before do
           user.follow(other_user.id)
         end
+
         it 'フォローをちゃんとできているか' do
           expect(user.following?(other_user)).to be_truthy
         end
@@ -89,5 +91,4 @@ RSpec.describe 'Userモデルのテスト', type: :model do
       end
     end
   end
-
 end
