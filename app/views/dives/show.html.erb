@@ -9,6 +9,14 @@
         <%= render 'favorites/favorite', dive: @dive %>
       </div>
 
+      <% if @dive.user.is_deleted == false %>
+      <% if user_signed_in? %>
+        <div class="far fa-comments mt-1 pl-3">
+          <%= @dive.dive_comments.count %>
+        </div>
+      <% end %>
+      <% end %>
+
       <div class="pl-3">
         <div id="bookmark_btn_<%= @dive.id %>">
           <%= render 'bookmarks/bookmark', dive: @dive %>
@@ -17,7 +25,7 @@
 
       <% if @dive.user.is_deleted == false %>
       <% if user_signed_in? %>
-        <div class="fas fa-eye mt-1 pl-3">
+        <div class="far fa-eye mt-1 pl-3">
           <%= @dive.impressionist_count %>
         </div>
       <% end %>
