@@ -8,12 +8,11 @@ class DiveCommentsController < ApplicationController
     @comment.save
     #通知機能
     @dive.create_notification_comment!(current_user, @comment.id)
-    redirect_to dive_path(@dive.id)
   end
 
   def destroy
+    @dive = Dive.find(params[:dive_id])
     DiveComment.find_by(id: params[:id]).destroy
-    redirect_to dive_path(params[:dive_id])
   end
 
   private
