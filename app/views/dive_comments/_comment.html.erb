@@ -1,17 +1,43 @@
-<div>
-<p class="mt-2">
-  <% dive.dive_comments.each do |dive_comment| %>
-</p>
-    <%= attachment_image_tag dive_comment.user, :profile_image, size: "30x30", class: "rounded-circle" %>
-    <%= dive_comment.created_at.strftime('%Y/%m/%d') %></br>
-    <div class="mt-1">
-      <%= dive_comment.user.name %>
-      『<%= dive_comment.comment %>』
-    </div>
-    <% if dive_comment.user == current_user %>
-    <div class="mt-2">
-      <%= link_to "削除", dive_dive_comment_path(dive_comment.dive, dive_comment), method: :delete, remote: true, class: "btn btn-danger" %>
-    </div>
-    <% end %>
+<% dive.dive_comments.includes(:user).includes(:replies).each do |comment| %>
+  <% if comment.reply.present? %>
+    <% next %>
   <% end %>
-</div>
+
+    <span id="comment_<%= comment.id %>">
+      <%= attachment_image_tag comment.user, :profile_image, size: "30x30", class: "rounded-circle" %>
+      <%= comment.created_at.strftime('%Y/%m/%d') %></br>
+    <div class="mt-1">
+      <%= comment.user.name %>
+      『<%= comment.comment %>』
+    </div>
+    <% if comment.user == current_user %>
+      <div class="mt-2">
+        <%= link_to "削除", dive_dive_comment_path(comment.dive, comment), method: :delete, remote: true, class: "btn btn-danger" %>
+      </div>
+    <% end %>
+
+    <% if comment.replies.present? %>
+      <% comment.replies.each do |reply| %>
+        <div class="reply mt-2">
+          <%= attachment_image_tag reply.user, :profile_image, size: "20x20", class: "rounded-circle" %>
+          <%= reply.created_at.strftime('%Y/%m/%d') %></br>
+          <%= reply.user.name %>
+          『<%= reply.comment %>』
+          </div>
+        </p>
+      <% end %>
+    <% end %>
+
+    <div class="row mt-3">
+      <div class="col-sm-4">
+        <%= form_with(model:[dive, DiveComment.new]) do |f| %>
+        <%= f.text_field :comment, class: "rounded-pill form-control" %>
+        <%= f.hidden_field :reply, :value => comment.id  %>
+        <div class="mt-3">
+          <%= f.submit "返信する", class: "btn btn-success" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </span><br/>
+<% end %>

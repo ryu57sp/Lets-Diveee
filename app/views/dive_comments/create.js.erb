@@ -1,2 +1,3 @@
 $("#dive_comments").html("<%= j(render 'dive_comments/comment', dive: @dive, dive_comment: @dive_comment) %>");
-$("#dive_comment_comment").val("");
+$("#dive_comment_count").text("<%= @dive.dive_comments.count %>")
+$("#dive_comment_form").val("");
