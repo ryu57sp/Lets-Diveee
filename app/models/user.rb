@@ -51,7 +51,7 @@ class User < ApplicationRecord
     if search != ""
       @user = User.where("name LIKE ?", "%#{word}%")
     else
-      @user = User.all
+      redirect_to request.referer
     end
   end
 end
