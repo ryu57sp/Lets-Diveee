@@ -1,8 +1,8 @@
-<h1 class="text-center mt-5 ml-5">Adventures🤿</h1>
+<h1 class="text-center mt-5">Adventures🤿</h1>
 
 <div class="container col-md-6 mb-5">
   <div class="scroll-list jscroll">
-    <div class="card-list-container ml-4 pt-3 row">
+    <div class="card-list-container pt-3 row">
       <% @dives.includes([:user]).each do |dive| %>
         <div class="card mx-auto mt-4 shadow-lg">
           <%= link_to dive_path(dive) do %>
