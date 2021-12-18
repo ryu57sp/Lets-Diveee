@@ -14,3 +14,16 @@
 .out{
   font-weight: bold;
 }
+
+.image-wrapper {
+    width: 100%;
+  }
+
+  @media screen and (max-width:768px) {
+    #dives .order-2 {
+      order: 1;
+    }
+    #dives .order-1 {
+      order: 2;
+    }
+  }

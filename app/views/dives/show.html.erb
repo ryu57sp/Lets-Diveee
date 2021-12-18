@@ -1,13 +1,64 @@
 <h1 class="text-center mt-5">Marine Adventure🤿</h1>
 
-<div class="d-flex offset-1 mt-5">
-  <div class="col-md-5">
+<div id="dives" class="container">
+  <div class="row mt-5">
 
-    <%= attachment_image_tag @dive, :image, :fill, 500, 350 %>
-    <div class="d-flex mt-3">
-      <div id="favorite_btn_<%= @dive.id %>" class="mr-3">
-        <%= render 'favorites/favorite', dive: @dive %>
+    <div class="col-md-7 col-12 pl-5 order-2 mb-5">
+
+      <div class="row">
+        <div class="detail col-5">投稿日</div>
+        <div class="answer col-7"><%= @dive.created_at.strftime('%Y/%m/%d') %></div>
       </div>
+
+      <div class="row mt-3">
+        <div class="detail col-5">ユーザーネーム</div>
+        <div class="answer col-7"><%= link_to @dive.user.name, user_path(@dive.user_id) %></div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="detail col-5">ポイント名</div>
+        <div class="answer col-7"><%= @dive.dive_point %></div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="detail col-5">内容</div>
+        <div class="answer col-7"><%= render_with_hashtags(@dive.body) %></div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="detail col-5">水温</div>
+        <div class="answer col-7"><%= @dive.water_temperature %></div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="detail col-5">潜水深度</div>
+        <div class="answer col-7"><%= @dive.maximum_depth %></div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="detail col-5">時期</div>
+        <div class="answer col-7"><%= @dive.season %></div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="detail col-5">利用したショップ</div>
+        <div class="answer col-7"><%= @dive.dive_shop %></div>
+      </div>
+
+      <% if @dive.user == current_user %>
+        <div class="text-center mt-5 pt-3">
+          <%= link_to "編集する", edit_dive_path(@dive), class: "btn btn-success" %>
+        </div>
+      <% end %>
+
+    </div>
+    <div class="col-md-5 col-12 order-1">
+
+      <%= attachment_image_tag @dive, :image, :fill, 500, 350, class: "image-wrapper" %>
+      <div class="d-flex mt-3">
+        <div id="favorite_btn_<%= @dive.id %>" class="mr-3">
+          <%= render 'favorites/favorite', dive: @dive %>
+        </div>
 
       <% if @dive.user.is_deleted == false %>
         <% if user_signed_in? %>
@@ -33,70 +84,21 @@
         <div class="out row text-danger">退会済みユーザーの投稿です。</div>
       <% end %>
     </div>
-    <div id="dive_comments">
-      <%= render 'dive_comments/comment', dive: @dive, dive_comment: @dive_comment %>
-    </div>
-    <% if @dive.user.is_deleted == false %>
-      <% if user_signed_in? %>
-      <div class="row mt-1">
-        <div class="col-sm-4 mt-3">
-        <%= form_with(model:[@dive, @dive_comment], remote: true) do |f| %>
-          <%= f.text_field :comment, id: "dive_comment_form", placeholder: 'コメント', class: "round-pill form-control" %>
-          <div class="mt-3 mb-5"><%= f.submit "送信する", class: "btn btn-success" %></div>
-        <% end %>
+      <div id="dive_comments">
+        <%= render 'dive_comments/comment', dive: @dive, dive_comment: @dive_comment %>
+      </div>
+      <% if @dive.user.is_deleted == false %>
+        <% if user_signed_in? %>
+        <div class="row mt-1">
+          <div class="col-sm-4 mt-3">
+          <%= form_with(model:[@dive, @dive_comment], remote: true) do |f| %>
+            <%= f.text_field :comment, id: "dive_comment_form", placeholder: 'コメント', class: "round-pill form-control" %>
+            <div class="mt-3 mb-5"><%= f.submit "送信する", class: "btn btn-success" %></div>
+          <% end %>
+          </div>
         </div>
-      </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-
-  <div class="col-md-7 pl-5">
-
-    <div class="row">
-      <div class="detail col-5">投稿日</div>
-      <div class="answer col-7"><%= @dive.created_at.strftime('%Y/%m/%d') %></div>
     </div>
-
-    <div class="row mt-3">
-      <div class="detail col-5">ユーザーネーム</div>
-      <div class="answer col-7"><%= link_to @dive.user.name, user_path(@dive.user_id) %></div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="detail col-5">ポイント名</div>
-      <div class="answer col-7"><%= @dive.dive_point %></div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="detail col-5">内容</div>
-      <div class="answer col-7"><%= render_with_hashtags(@dive.body) %></div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="detail col-5">水温</div>
-      <div class="answer col-7"><%= @dive.water_temperature %></div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="detail col-5">潜水深度</div>
-      <div class="answer col-7"><%= @dive.maximum_depth %></div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="detail col-5">時期</div>
-      <div class="answer col-7"><%= @dive.season %></div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="detail col-5">利用したショップ</div>
-      <div class="answer col-7"><%= @dive.dive_shop %></div>
-    </div>
-
-    <% if @dive.user == current_user %>
-      <div class="text-center mt-5 pt-3">
-        <%= link_to "編集する", edit_dive_path(@dive), class: "btn btn-success" %>
-      </div>
-    <% end %>
-
   </div>
 </div>
