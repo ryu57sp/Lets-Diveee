@@ -3,7 +3,7 @@
 <div id="dives" class="container">
   <div class="row mt-5">
 
-    <div class="col-md-7 col-12 pl-5 order-2 mb-5">
+    <div class="col-md-6 col-12 pl-5 order-2 mb-5">
 
       <div class="row">
         <div class="detail col-5">投稿日</div>
@@ -46,13 +46,13 @@
       </div>
 
       <% if @dive.user == current_user %>
-        <div class="text-center mt-5 pt-3">
+        <div class="text-right mt-4 pt-2">
           <%= link_to "編集する", edit_dive_path(@dive), class: "btn btn-success" %>
         </div>
       <% end %>
 
     </div>
-    <div class="col-md-5 col-12 order-1">
+    <div class="col-md-6 col-12 order-1">
 
       <%= attachment_image_tag @dive, :image, :fill, 500, 350, class: "image-wrapper" %>
       <div class="d-flex mt-3">
