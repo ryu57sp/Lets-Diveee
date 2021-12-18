@@ -1,4 +1,6 @@
 class DivesController < ApplicationController
+  before_action :set_q, only: [:index, :search]
+
   def new
     @dive = Dive.new
   end
@@ -50,7 +52,15 @@ class DivesController < ApplicationController
     @dives = @tag.dives.includes(:user).page(params[:page]).per(4)
   end
 
+  def search
+    @results = @q.result.order('id DESC').page(params[:page]).per(4)
+  end
+
   private
+
+  def set_q
+    @q = Dive.includes(:user).ransack(params[:q])
+  end
 
   def dive_params
     params.require(:dive).permit(:image, :dive_point, :title, :body, :water_temperature, :maximum_depth, :season, :dive_shop)

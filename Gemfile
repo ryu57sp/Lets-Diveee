@@ -84,6 +84,8 @@ gem 'bootstrap4-kaminari-views'
 gem 'pry-byebug'
 gem 'rubocop-airbnb'
 
+gem 'ransack'
+
 gem 'impressionist', '~>1.6.1'
 
 gem 'dotenv-rails'
