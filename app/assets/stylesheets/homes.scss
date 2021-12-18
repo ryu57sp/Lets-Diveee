@@ -28,12 +28,12 @@
   background-image: image-url("underwater.jpg");
 }
 
-.slide1{
+.slide-image{
   width: 40%;
 }
 
-.slide2{
-  width: 40%;
+.slide-image + .slide-image{
+  margin-left: 13px;
 }
 
 div.animation_box {
