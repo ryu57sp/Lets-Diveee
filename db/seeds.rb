@@ -36,6 +36,26 @@ User.create!(
   is_deleted: false
   )
 
+User.create!(
+  name: "シャチ",
+  email: "orca@ocean.com",
+  password: "7777777",
+  profile_image: File.open("#{Rails.root}/app/assets/images/NO_IMAGE.jpg"),
+  profile: "海の王者です！",
+  diver_rank: "オープンウォーター",
+  is_deleted: false
+  )
+
+User.create!(
+  name: "サメ",
+  email: "shark@ocean.com",
+  password: "9999999",
+  profile_image: File.open("#{Rails.root}/app/assets/images/NO_IMAGE.jpg"),
+  profile: "ホホジロザメです！",
+  diver_rank: "インストラクター以上",
+  is_deleted: false
+  )
+
 Dive.create!(
   user_id: 1,
   image: File.open("#{Rails.root}/app/assets/images/post1.jpg"),

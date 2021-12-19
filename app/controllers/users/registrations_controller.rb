@@ -32,6 +32,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         respond_with resource
       end
 
+      WelcomeMailer.with(user: resource).welcome_email.deliver_later
+
     else
       flash[:error] = '未入力の情報または入力された情報に誤りがあります。'
       redirect_to request.referer

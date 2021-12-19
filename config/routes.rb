@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get 'ranks/index'
   get '/dive/hashtag/:name' => 'dives#hashtag'
 
-  devise_for :users, module: "users"
+  devise_for :users, module: "users", :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :dives do
     resources :dive_comments, only: [:create, :destroy]
