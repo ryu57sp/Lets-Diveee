@@ -349,7 +349,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
       visit notifications_path
     end
 
-     context '表示の確認' do
+    context '表示の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/notifications'
       end
@@ -364,7 +364,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
       visit ranks_path
     end
 
-     context '表示の確認' do
+    context '表示の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/ranks'
       end
@@ -379,7 +379,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
       visit bookmarks_path
     end
 
-     context '表示の確認' do
+    context '表示の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/bookmarks'
       end

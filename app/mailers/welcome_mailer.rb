@@ -5,5 +5,4 @@ class WelcomeMailer < ApplicationMailer
     @user = params[:user]
     mail(to: @user.email, subject: '会員登録が完了しました。')
   end
-
 end
