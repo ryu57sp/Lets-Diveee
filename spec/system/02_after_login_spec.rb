@@ -59,6 +59,9 @@ describe '[STEP2] ユーザログイン後のテスト' do
       it 'URLが正しい' do
         expect(current_path).to eq '/dives'
       end
+      it '「All Adventures🤿」と表示される' do
+        expect(page).to have_content 'All Adventures🤿'
+      end
       it '自分と他人の画像のリンク先が正しい' do
         expect(page).to have_link '', href: user_path(dive.user)
         expect(page).to have_link '', href: user_path(other_dive.user)
@@ -99,6 +102,9 @@ describe '[STEP2] ユーザログイン後のテスト' do
     context '表示の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/dives/' + dive.id.to_s
+      end
+      it '「Marine Adventure🤿」と表示される' do
+        expect(page).to have_content 'Marine Adventure🤿'
       end
       it '投稿日が表示される' do
         dive.created_at.strftime('%Y/%m/%d')
@@ -334,6 +340,51 @@ describe '[STEP2] ユーザログイン後のテスト' do
       end
       it '退会するボタンが表示される' do
         expect(page).not_to have_button '退会する'
+      end
+    end
+  end
+
+  describe '通知一覧画面のテスト' do
+    before do
+      visit notifications_path
+    end
+
+     context '表示の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/notifications'
+      end
+      it '「通知はありません。」と表示される' do
+        expect(page).to have_content '通知はありません。'
+      end
+    end
+  end
+
+  describe 'ランキング画面のテスト' do
+    before do
+      visit ranks_path
+    end
+
+     context '表示の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/ranks'
+      end
+      it '「毎日更新」と表示される' do
+        expect(page).to have_content '毎日更新'
+      end
+    end
+  end
+
+  describe 'ブックマーク一覧画面のテスト' do
+    before do
+      visit bookmarks_path
+    end
+
+     context '表示の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/bookmarks'
+      end
+      it '「ブックマーク一覧」と表示される' do
+        expect(page).to have_content 'ブックマーク一覧'
       end
     end
   end
