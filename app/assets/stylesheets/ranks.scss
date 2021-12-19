@@ -2,17 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.all_rank{
+.all_rank {
   font-weight: 10px;
 }
 
-.rank{
+.rank {
   width: 38%;
   margin-right: auto;
   margin-left: auto;
 }
 
-.line{
+.line {
   font-size: 18px;
   font-weight: bold;
+}
+
+.fav {
+  background: -webkit-linear-gradient(#ffc107, #ff8b5f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
