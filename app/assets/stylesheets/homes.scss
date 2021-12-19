@@ -44,16 +44,20 @@ div.animation_box {
   transition: 5s ease;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   #box{
     width: 80%;
     height: 350px;
   }
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 544px) {
   #box{
     width: 70%;
     height: 200px;
+  }
+
+  .slide-image{
+    width: 45%;
   }
 }

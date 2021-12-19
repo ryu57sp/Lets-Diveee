@@ -167,3 +167,33 @@ nav.pagination {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 768px){
+  h1{
+    font-size: 38px;
+  }
+
+  h2{
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 544px){
+  h1{
+    font-size: 30px;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 400px){
+   h1{
+    font-size: 27px;
+  }
+
+  h2{
+    font-size: 17px;
+  }
+}
