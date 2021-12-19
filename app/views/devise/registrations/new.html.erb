@@ -1,11 +1,12 @@
-<div class="col-md-10 mx-auto mt-5">
+<div class="col-md-10 mx-auto mt-5 pt-3">
+
+  <div class="text-danger">
+    <%= flash[:error] %>
+  </div>
 
   <h2 class="text-center">新規会員登録</h2>
 
   <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-  <div class="text-danger">
-    <%= flash[:error] %>
-  </div>
 
     <div class="text-center field mt-5">
       <%= f.label :ユーザーネーム %><br />
