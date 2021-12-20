@@ -388,4 +388,19 @@ describe '[STEP2] ユーザログイン後のテスト' do
       end
     end
   end
+
+  describe 'マップ画面のテスト' do
+    before do
+      visit map_path
+    end
+
+    context '表示の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/map'
+      end
+      it '「ポイント・ショップ検索」と表示される' do
+        expect(page).to have_content 'ポイント・ショップ検索'
+      end
+    end
+  end
 end
