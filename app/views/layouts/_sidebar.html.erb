@@ -3,6 +3,9 @@
     <%= link_to "サイト概要", about_path, data:{"turbolinks" => false} %>
   </li>
   <li>
+    <%= link_to "マップ検索", map_path, data:{"turbolinks" => false} %>
+  </li>
+  <li>
     <%= link_to "マイページ", user_path(current_user.id) %>
   </li>
   <li>
@@ -26,6 +29,9 @@
 <% else %>
   <li>
     <%= link_to "サイト概要", about_path, data:{"turbolinks" => false} %>
+  </li>
+  <li>
+    <%= link_to "マップ検索", map_path, data:{"turbolinks" => false} %>
   </li>
   <li>
     <%= link_to "ランキング", ranks_path %>

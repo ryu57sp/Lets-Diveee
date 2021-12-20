@@ -46,7 +46,7 @@
 - 綺麗な海の写真を見て癒やされたい時
 
 ## 設計書
-（PV機能・メール機能・投稿検索機能・ブックマーク機能・ハッシュタグ機能は後から追加しました。）
+（PV機能・マップ機能・メール機能・投稿検索機能・ブックマーク機能・ハッシュタグ機能は後から追加しました。）
 - 画面遷移図
 
 <img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/flow.jpg" width="100%">

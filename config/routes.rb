@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
   get "about" => 'homes#about'
+  get "map" => 'homes#map'
   get "search" => 'searches#search'
   get 'ranks/index'
   get '/dive/hashtag/:name' => 'dives#hashtag'

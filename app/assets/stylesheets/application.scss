@@ -155,6 +155,10 @@ nav.pagination {
 }
 //ここまで
 
+.msg {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 1200px) {
   .navbar-nav{
     display: none;
