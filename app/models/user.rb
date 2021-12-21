@@ -2,7 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: %i[google_oauth2]
+
 
   attachment :profile_image
 
@@ -21,7 +23,7 @@ class User < ApplicationRecord
   has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
   has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
 
-  validates :name, presence: true, uniqueness: true, length: { minimum: 2, maximum: 8 }
+  validates :name, presence: true, uniqueness: true, length: { minimum: 2, maximum: 20 }
 
   def active_for_authentication?
     super && (is_deleted == false)
@@ -52,6 +54,14 @@ class User < ApplicationRecord
       @user = User.where("name LIKE ?", "%#{word}%")
     else
       redirect_to request.referer
+    end
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.name = auth.info.name
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
     end
   end
 end

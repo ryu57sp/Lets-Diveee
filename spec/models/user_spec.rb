@@ -23,8 +23,8 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         user.name = Faker::Lorem.characters(number: 8)
         is_expected.to eq true
       end
-      it '8文字以下であること: 9文字は×' do
-        user.name = Faker::Lorem.characters(number: 9)
+      it '20文字以下であること: 21文字は×' do
+        user.name = Faker::Lorem.characters(number: 21)
         is_expected.to eq false
       end
       it '一意性があること' do

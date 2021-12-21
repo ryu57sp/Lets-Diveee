@@ -4,6 +4,20 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
+  def google_oauth2
+    callback_for(:google)
+  end
+
+  def callback_for(provider)
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+    sign_in_and_redirect @user, event: :authentication
+    set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
+  end
+
+  def failure
+    redirect_to request.referer
+  end
+
   # You should also create an action method in this controller like this:
   # def twitter
   # end

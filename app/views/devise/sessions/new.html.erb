@@ -33,6 +33,10 @@
   <% end %>
 
   <div class="text-center pt-5">
+    <%= link_to "Googleアカウントでログイン", user_google_oauth2_omniauth_authorize_path, method: :post %>
+  </div>
+
+  <div class="text-center pt-3">
     <h7>会員登録がお済みでない方　↓</h7>
     <p><%= link_to "こちら",new_user_registration_path %></u>　から新規登録してください。</p>
   </div>
