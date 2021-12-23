@@ -49,7 +49,7 @@ class DivesController < ApplicationController
   def hashtag
     @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
-    @dives = @tag.dives.includes(:user).page(params[:page]).per(4)
+    @dives = @tag.dives.order('dive_id DESC').includes(:user).page(params[:page]).per(4)
   end
 
   def search
