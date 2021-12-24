@@ -4,7 +4,7 @@
 
 <div class="text-center mt-5">
   <% @user.each do |user| %>
-   <%= attachment_image_tag user, :profile_image, size: "50x50", class: "rounded-circle img-thumbnail" %>
+   <%= attachment_image_tag user, :profile_image, size: "58x58", class: "rounded-circle img-thumbnail" %>
    <span style="font-size:18px;">
      <%= link_to user.name, user_path(user) %>
    </span>
