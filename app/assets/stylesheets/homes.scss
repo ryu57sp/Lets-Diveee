@@ -29,11 +29,11 @@
 }
 
 .slide-image {
-  width: 40%;
+  width: 45%;
 }
 
 .slide-image + .slide-image {
-  margin-left: 13px;
+  margin-left: 10px;
 }
 
 div.animation_box {
@@ -42,6 +42,10 @@ div.animation_box {
   opacity: 0;
   transform: translateX(-20px);
   transition: 5s ease;
+}
+
+.head {
+  font-weight: bold;
 }
 
 
