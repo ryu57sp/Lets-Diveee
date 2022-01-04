@@ -60,7 +60,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
         expect(current_path).to eq '/dives'
       end
       it '「All Adventures🤿」と表示される' do
-        expect(page).to have_content 'All Adventures🤿'
+        expect(page).to have_content 'All Adventures 🤿'
       end
       it '自分と他人の画像のリンク先が正しい' do
         expect(page).to have_link '', href: user_path(dive.user)
@@ -104,7 +104,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
         expect(current_path).to eq '/dives/' + dive.id.to_s
       end
       it '「Marine Adventure🤿」と表示される' do
-        expect(page).to have_content 'Marine Adventure🤿'
+        expect(page).to have_content 'Marine Adventure 🤿'
       end
       it '投稿日が表示される' do
         dive.created_at.strftime('%Y/%m/%d')
@@ -200,7 +200,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
         expect(current_path).to eq '/dives/' + dive.id.to_s + '/edit'
       end
       it '「Edit Adventure」と表示される' do
-        expect(page).to have_content 'Edit Adventure🤿'
+        expect(page).to have_content 'Edit Adventure 🤿'
       end
       it 'ポイント名編集フォームが表示される' do
         expect(page).to have_field 'dive[dive_point]', with: dive.dive_point
