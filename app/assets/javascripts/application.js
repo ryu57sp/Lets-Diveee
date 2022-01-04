@@ -140,18 +140,24 @@ $(document).on('turbolinks:load', function(){
       // ボタンに指定したid要素を取得
       var button = document.getElementById("map_button");
       // ボタンが押された時の処理
-      button.onclick = function() {
+      if (button != null) {
+        //ボタンが存在した場合
+        //ボタンが押された時の処理
+        button.onclick = function() {
         // フォームに入力された住所情報を取得
         var address = document.getElementById("address").value;
         // 取得した住所を引数に指定してcodeAddress()関数を実行
         codeAddress(address);
+        }
       }
       //読み込まれたときに地図を表示
       window.onload = function(){
-        // フォームに入力された住所情報を取得
-        var address = document.getElementById("address").value;
-        // 取得した住所を引数に指定してcodeAddress()関数を実行
-        codeAddress(address);
+        if ( document.getElementById("address")  != null){
+          // フォームに入力された住所情報を取得
+          var address = document.getElementById("address").value;
+          // 取得した住所を引数に指定してcodeAddress()関数を実行
+          codeAddress(address);
+        }
       }
     }
   };
