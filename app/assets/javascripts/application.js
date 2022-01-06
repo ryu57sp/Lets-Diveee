@@ -152,7 +152,7 @@ $(document).on('turbolinks:load', function(){
       }
       //読み込まれたときに地図を表示
       window.onload = function(){
-        if ( document.getElementById("address")  != null){
+        if ( document.getElementById("address") != null){
           // フォームに入力された住所情報を取得
           var address = document.getElementById("address").value;
           // 取得した住所を引数に指定してcodeAddress()関数を実行
