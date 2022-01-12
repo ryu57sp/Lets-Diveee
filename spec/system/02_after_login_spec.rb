@@ -62,6 +62,9 @@ describe '[STEP2] ユーザログイン後のテスト' do
       it '「All Adventures🤿」と表示される' do
         expect(page).to have_content 'All Adventures 🤿'
       end
+      it '投稿検索ボタンが表示される' do
+        expect(page).to have_button '検索'
+      end
       it '自分と他人の画像のリンク先が正しい' do
         expect(page).to have_link '', href: user_path(dive.user)
         expect(page).to have_link '', href: user_path(other_dive.user)
@@ -271,6 +274,9 @@ describe '[STEP2] ユーザログイン後のテスト' do
       it 'マイページ編集画面へのリンクが正しい' do
         expect(page).to have_link '編集する', href: edit_user_path(user)
       end
+      it 'ブックマーク一覧画面へのリンクが正しい' do
+        expect(page).to have_link 'ブックマーク一覧', href: bookmarks_path
+      end
       it '自分の各投稿へのリンクが正しい' do
         expect(page).to have_link dive.image, href: dive_path(dive)
       end
@@ -384,7 +390,7 @@ describe '[STEP2] ユーザログイン後のテスト' do
         expect(current_path).to eq '/bookmarks'
       end
       it '「ブックマーク一覧」と表示される' do
-        expect(page).to have_content 'ブックマーク一覧'
+        expect(page).to have_content 'ブックマーク一覧 🔖'
       end
     end
   end
