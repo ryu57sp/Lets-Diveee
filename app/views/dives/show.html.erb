@@ -90,7 +90,7 @@
       <% if @dive.user.is_deleted == false %>
         <% if user_signed_in? %>
         <div class="row mt-1">
-          <div class="col-sm-4 mt-3">
+          <div class="col-sm-4 mt-1">
           <%= form_with(model:[@dive, @dive_comment], remote: true) do |f| %>
             <%= f.text_field :comment,required: true, id: "dive_comment_form", placeholder: 'コメント', class: "round-pill form-control" %>
             <div class="mt-3 mb-5"><%= f.submit "送信する", class: "btn btn-success btn-sm" %></div>
