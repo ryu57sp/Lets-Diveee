@@ -16,6 +16,7 @@
         <tbody>
           <tr>
             <th>
+              <p class="date", style="text-align: left;">(<%= chat.created_at.strftime('%Y/%m/%d') %>)</p>
                <p style="text-align: left;"><%= chat.message %></p>
             </th>
           </tr>
@@ -23,6 +24,7 @@
           <tr>
             <th></th>
             <th>
+              <p class="date", style="text-align: right;">(<%= chat.created_at.strftime('%Y/%m/%d') %>)</p>
               <p style="text-align: right;"><%= chat.message %></p>
             </th>
           </tr>
