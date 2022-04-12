@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @user_dives = @user.dives.order('id DESC').page(params[:page]).per(4)
   end
 
   def edit
