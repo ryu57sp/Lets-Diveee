@@ -13,43 +13,6 @@ describe '[STEP2] ユーザログイン後のテスト' do
     click_button 'ログイン'
   end
 
-  describe 'ヘッダーのテスト: ログインしている場合' do
-    context 'リンクの内容を確認: ※ログアウトは『ユーザログアウトのテスト』でテスト済みになります。' do
-      subject { current_path }
-
-      it 'Aboutを押すと、アバウト画面に遷移する' do
-        about_link = find_all('a')[2].native.inner_text
-        about_link = about_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-        click_link about_link
-        is_expected.to eq '/about'
-      end
-      it 'マイページを押すと、ユーザー詳細画面に遷移する' do
-        mypage_link = find_all('a')[3].native.inner_text
-        mypage_link = mypage_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-        click_link mypage_link, match: :first
-        is_expected.to eq '/users/' + user.id.to_s
-      end
-      it 'ランキングを押すと、いいねランキング画面に遷移する' do
-        ranks_link = find_all('a')[4].native.inner_text
-        ranks_link = ranks_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-        click_link ranks_link, match: :first
-        is_expected.to eq '/ranks'
-      end
-      it '新規投稿を押すと、新規投稿画面に遷移する' do
-        new_dive_link = find_all('a')[5].native.inner_text
-        new_dive_link = new_dive_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-        click_link new_dive_link, match: :first
-        is_expected.to eq '/dives/new'
-      end
-      it '投稿一覧を押すと、投稿一覧画面に遷移する' do
-        dives_link = find_all('a')[6].native.inner_text
-        dives_link = dives_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-        click_link dives_link, match: :first
-        is_expected.to eq '/dives'
-      end
-    end
-  end
-
   describe '投稿一覧画面のテスト' do
     before do
       visit dives_path

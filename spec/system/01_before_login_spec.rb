@@ -14,24 +14,12 @@ describe '[STEP1] ユーザログイン前のテスト' do
         home_link = find_all('a')[0].native.inner_text
         expect(home_link).to match(/Let's Diveee!!!/)
       end
-      it 'Aboutが表示される：１番目である' do
-        about_link = find_all('a')[1].native.inner_text
-        expect(about_link).to match(/About/)
-      end
-      it 'ランキングが表示される：２番目である' do
-        ranks_link = find_all('a')[2].native.inner_text
-        expect(ranks_link).to match(/ランキング/)
-      end
-      it '投稿一覧が表示される：３番目である' do
-        dives_link = find_all('a')[3].native.inner_text
-        expect(dives_link).to match(/投稿一覧/)
-      end
-      it '新規登録が表示される：４番目である' do
-        signup_link = find_all('a')[4].native.inner_text
+      it '新規登録が表示される：1番目である' do
+        signup_link = find_all('a')[1].native.inner_text
         expect(signup_link).to match(/新規登録/)
       end
-      it 'ログインが表示される：５番目である' do
-        signin_link = find_all('a')[5].native.inner_text
+      it 'ログインが表示される：2番目である' do
+        signin_link = find_all('a')[2].native.inner_text
         expect(signin_link).to match(/ログイン/)
       end
     end
@@ -57,32 +45,14 @@ describe '[STEP1] ユーザログイン前のテスト' do
     context 'リンクの内容を確認' do
       subject { current_path }
 
-      it 'Aboutを押すと、アバウト画面に遷移する' do
-        about_link = find_all('a')[1].native.inner_text
-        about_link = about_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-        click_link about_link
-        is_expected.to eq '/about'
-      end
-      it 'ランキングを押すと、いいねランキング画面に遷移する' do
-        ranks_link = find_all('a')[2].native.inner_text
-        ranks_link = ranks_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-        click_link ranks_link, match: :first
-        is_expected.to eq '/ranks'
-      end
-      it '投稿一覧を押すと、投稿一覧画面に遷移する' do
-        dives_link = find_all('a')[3].native.inner_text
-        dives_link = dives_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-        click_link dives_link, match: :first
-        is_expected.to eq '/dives'
-      end
       it '新規登録を押すと、新規登録画面に遷移する' do
-        signup_link = find_all('a')[4].native.inner_text
+        signup_link = find_all('a')[1].native.inner_text
         signup_link = signup_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
         click_link signup_link, match: :first
         is_expected.to eq '/users/sign_up'
       end
       it 'ログインを押すと、ログイン画面に遷移する' do
-        signin_link = find_all('a')[5].native.inner_text
+        signin_link = find_all('a')[2].native.inner_text
         signin_link = signin_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
         click_link signin_link, match: :first
         is_expected.to eq '/users/sign_in'
@@ -216,16 +186,8 @@ describe '[STEP1] ユーザログイン前のテスト' do
         n_link = find_all('a')[1].native.inner_text
         expect(n_link).to match(//)
       end
-      it 'マイページが表示される' do
-        mypage_link = find_all('a')[3].native.inner_text
-        expect(mypage_link).to match(/マイページ/)
-      end
-      it '新規投稿が表示されるる' do
-        new_dive_link = find_all('a')[5].native.inner_text
-        expect(new_dive_link).to match(/新規投稿/)
-      end
       it 'ログアウトが表示される' do
-        signout_link = find_all('a')[7].native.inner_text
+        signout_link = find_all('a')[2].native.inner_text
         expect(signout_link).to match(/ログアウト/)
       end
     end
@@ -239,13 +201,13 @@ describe '[STEP1] ユーザログイン前のテスト' do
       fill_in 'user[email]', with: user.email
       fill_in 'user[password]', with: user.password
       click_button 'ログイン'
-      signout_link = find_all('a')[7].native.inner_text
+      signout_link = find_all('a')[2].native.inner_text
       signout_link = signout_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
       click_link signout_link, match: :first
     end
 
     context 'ログアウト機能のテスト' do
-      it '正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する' do
+      it '正しくログアウトできている: ログアウト後のリダイレクト先においてサイト概要へのリンクが存在する' do
         expect(page).to have_link '', href: '/about'
       end
       it 'ログアウト後のリダイレクト先が、トップページになっている' do
