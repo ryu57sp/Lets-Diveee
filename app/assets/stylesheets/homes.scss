@@ -96,3 +96,9 @@ div.animation_box {
     width: 100% !important;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .msg {
+    font-size: 14px;
+  }
+}

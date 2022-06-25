@@ -37,3 +37,13 @@
     font-size: 14px;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .detail {
+    font-size: 13px;
+  }
+
+  .answer {
+    font-size: 13px;
+  }
+}
