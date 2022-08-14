@@ -1,9 +1,9 @@
 <h1 class="text-center mt-5">All Adventures 🤿</h1>
 
 <%= search_form_for @q, url: search_dives_path do |f| %>
-  <div class="text-center mt-5">
+  <div class="d-flex justify-content-center mt-5">
     <%= f.search_field :title_cont, required: true, placeholder: "タイトルで検索！" %>
-    <%= f.submit '検索', class: "ml-1" %>
+    <%= f.submit '検索', class: "ml-2" %>
   </div>
 <% end %>
 
