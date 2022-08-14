@@ -1,15 +1,18 @@
 <h2 class="text-center mt-5">🔍 ポイント・ショップ検索 🔎</h2>
 
-<div class="container">
-  <div class="row col-md-6 mx-auto mt-5">
-
-    <div class="mx-auto">
-      <form onsubmit="return false;">
-        <input type="text" value="伊豆海洋公園" id="address">
-        <button class="ml-1" type="button" value="検索" id="map_button">検索</button>
-      </form>
+<div class="mx-auto mt-4">
+  <form onsubmit="return false;">
+    <div class="d-flex justify-content-center">
+      <input type="text" value="伊豆海洋公園" id="address">
     </div>
+    <div class="text-center mt-3">
+      <button type="button" value="検索" id="map_button">検索</button>
+    </div>
+  </form>
+</div>
 
+<div class="container">
+  <div class="row col-md-6 mx-auto mt-1">
     <p class="msg mx-auto mt-3">※ 地図をクリックするとピンが移動します。</p>
 
     <div class="gmap_wrapper mt-1">
