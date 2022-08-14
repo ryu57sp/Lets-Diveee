@@ -1,15 +1,19 @@
 <h1 class="text-center mt-5">All Adventures 🤿</h1>
 
 <%= search_form_for @q, url: search_dives_path do |f| %>
-  <div class="d-flex justify-content-center mt-5">
-    <%= f.search_field :title_cont, required: true, placeholder: "タイトルで検索！" %>
-    <%= f.submit '検索', class: "ml-2" %>
+  <div class="mt-4">
+    <div class="text-center">
+      <%= f.search_field :title_cont, required: true, placeholder: "タイトルで検索！" %>
+    </div>
+    <div class="text-center">
+      <%= f.submit '検索', class: "mt-3" %>
+    </div>
   </div>
 <% end %>
 
 <div class="container col-md-6 mb-5">
   <div class="scroll-list jscroll">
-    <div class="card-list-container pt-3 row">
+    <div class="card-list-container pt-1 row">
       <% @dives.includes([:user]).each do |dive| %>
         <div class="card mx-auto mt-4 shadow-lg">
           <%= link_to dive_path(dive) do %>
