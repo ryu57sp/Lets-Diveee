@@ -61,9 +61,7 @@ https://letsdiveee.com
 
 携帯でも使いやすいようになっています！
 
-<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/mobile1.jpg" width="30%">
-
-<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/mobile2.jpg" width="30%">
+<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/mobile1.jpg" width="50%">　<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/mobile2.jpg" width="50%">　<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/mobile3.jpg" width="50%">
 
 ## 設計書
 PV・SNS認証・マップ・メール・投稿検索・ブックマーク・ハッシュタグ機能は後から追加しました。
