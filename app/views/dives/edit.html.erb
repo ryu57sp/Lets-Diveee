@@ -1,6 +1,6 @@
 <h1 class="text-center mt-5">Edit Adventure 🤿</h1>
 
-<div class="col-8 offset-2 mt-5">
+<div class="col-10 offset-1 mt-5">
   <%= form_with model: @dive, local: true do |f| %>
 
     <div class="form-group row", style="overflow: scroll;">
@@ -44,7 +44,7 @@
     </div>
 
     <div class="text-center mt-5">
-      <%= f.submit "更新", class: "btn btn-success", style: "width:120px" %>
+      <%= f.submit "更新", class: "btn btn-success mr-2", style: "width:120px" %>
       <%= link_to "削除", dive_path(@dive.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger", style:"width:120px" %>
     </div>
 
