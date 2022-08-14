@@ -53,9 +53,17 @@ https://letsdiveee.com
 - ダイビングで撮影した写真と情報を思い出として残したい時
 - 多くの人に向けて海の魅力を発信したい＆海に行くきっかけを与えたい人
 #### 🏝 ダイビングに興味がある人・海が好きな人
-- ダイビングの世界を見てみたい時
-- どのランクまで取ろうか迷っている時
-- 綺麗な海の写真を見て癒やされたい時
+- ダイビングの世界を見てみたい人
+- どのランクまで取ろうか迷っている人
+- 綺麗な海の写真を見て癒やされたい人
+
+## アピールポイント
+
+携帯でも使いやすいようになっています！
+
+<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/mobile1.jpg" width="30%">
+
+<img src="https://github.com/ryu57sp/LetsDiveee/blob/main/app/assets/images/mobile2.jpg" width="30%">
 
 ## 設計書
 PV・SNS認証・マップ・メール・投稿検索・ブックマーク・ハッシュタグ機能は後から追加しました。
